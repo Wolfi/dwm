@@ -116,6 +116,8 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *roficmd[] = { "rofi", "-show", "drun", "&", ">>", "/tmp/rofi.log" };
+static const char *rofitmuxcmd[] = { "/home/steven/dotfiles/bin/.local/scripts/tmux-project-switcher-rofi", "&", ">>", "/tmp/rofi.log"};
 
 /*
  * Xresources preferences to load at startup
@@ -142,6 +144,9 @@ ResourcePref resources[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	/* { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } }, */
+	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofitmuxcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
