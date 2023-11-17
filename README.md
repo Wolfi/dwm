@@ -19,6 +19,7 @@
 * https://dwm.suckless.org/patches/actualfullscreen/
 * https://dwm.suckless.org/patches/alwayscenter/
 * https://dwm.suckless.org/patches/barpadding/
+* Scheme?
 
 
 ### shiftview.c
