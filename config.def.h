@@ -25,15 +25,31 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static char *colors[][3] = {
-       /*               fg           bg           border   */
-       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+
+#include "colors/rose-pine.h"
+static const char *colors[][3]  = {
+  /*                     fg   bg   border */
+  [SchemeNorm]       = { fg1, bg0, fg2 },
+  [SchemeSel]        = { bg1, rose, rose },
+  [SchemeTag]        = { bg0, bg1, bg0 },
+  [SchemeTag1]       = { rose, bg0,  bg1 },
+  [SchemeTag2]       = { red, bg0, bg1 },
+  [SchemeTag3]       = { yellow, bg0, bg1 },
+  [SchemeTag4]       = { bluu, bg0, bg1 },
+  [SchemeTag5]       = { purple, bg0, bg1 },
+  [SchemeTag6]       = { cyan, bg0, bg1 },
+  [SchemeLayout]     = { rose, bg0, bg1 },
+  [SchemeTitle]      = { fg0, bg0, bg1 },
+  [SchemeTitle1]     = { rose, bg0, bg1 },
+  [SchemeTitle2]     = { red, bg0, bg1 },
+  [SchemeTitle3]     = { yellow, bg0, bg1 },
+  [SchemeTitle4]     = { bluu, bg0, bg1 },
+  [SchemeTitle5]     = { purple, bg0, bg1 },
+  [SchemeTitle6]     = { cyan, bg0, bg1 },
 };
 
 /* tagging */
 static const char *tags[] = { " ", " ", " ", " ", "󱞁 ", "󰲫 ", "󰲭 ", "󰲯 ", "󰲱 " };
-//  { " ", " ", " ", " ", "󱞁 ", "󰲫 ", "󰲭 ", "󰲯 ", "󰲱 " }
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -114,17 +130,15 @@ ResourcePref resources[] = {
 		{ "selbordercolor",     STRING,  &selbordercolor },
 		{ "selfgcolor",         STRING,  &selfgcolor },
 		{ "borderpx",          	INTEGER, &borderpx },
-		{ "snap",          		INTEGER, &snap },
+		{ "snap",           		INTEGER, &snap },
 		{ "showbar",          	INTEGER, &showbar },
-		{ "topbar",          	INTEGER, &topbar },
+		{ "topbar",            	INTEGER, &topbar },
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
-		{ "mfact",      	 	FLOAT,   &mfact },
+		{ "mfact",      	 	    FLOAT,   &mfact },
 };
 
 #include "shiftview.c"
-
- 
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
