@@ -144,10 +144,9 @@ ResourcePref resources[] = {
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	/* { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } }, */
-	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofitmuxcmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	/*{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },*/
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
