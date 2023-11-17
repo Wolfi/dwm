@@ -117,7 +117,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "&", ">>", "/tmp/rofi.log" };
-static const char *rofitmuxcmd[] = { "/home/steven/dotfiles/bin/.local/scripts/tmux-project-switcher-rofi", "&", ">>", "/tmp/rofi.log"};
+static const char *rofitmuxcmd[] = { "tmux-project-switcher-rofi", "&", ">>", "/tmp/rofi.log"};
 
 /*
  * Xresources preferences to load at startup
