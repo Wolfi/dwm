@@ -14,6 +14,12 @@
 * https://dwm.suckless.org/patches/scratchpad/
 * https://dwm.suckless.org/patches/nextprev/ (https://lists.suckless.org/dev/1104/7590.html)
 
+## TODO
+
+* https://dwm.suckless.org/patches/actualfullscreen/
+* https://dwm.suckless.org/patches/alwayscenter/
+* https://dwm.suckless.org/patches/barpadding/
+
 
 ### shiftview.c
 
