@@ -97,6 +97,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -125,6 +127,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
@@ -168,9 +171,7 @@ static const Key keys[] = {
   
   /* shiftview */
   {MODKEY, XK_Page_Up, shiftview, {.i = -1}},
-  {MODKEY | ShiftMask, XK_Page_Up, shifttag, {.i = -1}},
   {MODKEY, XK_Page_Down, shiftview, {.i = +1}},
-  {MODKEY | ShiftMask, XK_Page_Down, shifttag, {.i = +1}},
 	/* // shiftview*/
 
   TAGKEYS(                        XK_1,                      0)

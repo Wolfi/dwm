@@ -127,7 +127,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
@@ -171,9 +171,7 @@ static const Key keys[] = {
   
   /* shiftview */
   {MODKEY, XK_Page_Up, shiftview, {.i = -1}},
-  {MODKEY | ShiftMask, XK_Page_Up, shifttag, {.i = -1}},
   {MODKEY, XK_Page_Down, shiftview, {.i = +1}},
-  {MODKEY | ShiftMask, XK_Page_Down, shifttag, {.i = +1}},
 	/* // shiftview*/
 
   TAGKEYS(                        XK_1,                      0)
