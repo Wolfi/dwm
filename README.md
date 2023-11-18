@@ -13,15 +13,28 @@
 * https://dwm.suckless.org/patches/zoomswap/
 * https://dwm.suckless.org/patches/scratchpad/
 * https://dwm.suckless.org/patches/nextprev/ (https://lists.suckless.org/dev/1104/7590.html)
+* colorful tags
 
 ## TODO
 
 * https://dwm.suckless.org/patches/actualfullscreen/
 * https://dwm.suckless.org/patches/alwayscenter/
 * https://dwm.suckless.org/patches/barpadding/
-* Scheme?
+* notitle
+* Describe patches
+* Remove
+  * hide vacant tags
+  * xresources
 
+## To Check
 
-### shiftview.c
+* autostart
+* actualfullscreen
+* alwayscenter
+* barpadding
+* colorfull tag
+* movestack
+* notitle
+* statuspadding
 
 
