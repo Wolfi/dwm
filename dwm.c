@@ -85,7 +85,13 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel }; /* color schemes */
+enum { SchemeNorm, SchemeSel,
+       SchemeTag, SchemeTag1, SchemeTag2, SchemeTag3,
+       SchemeTag4, SchemeTag5, SchemeTag6, SchemeTag7,
+       SchemeTag8, SchemeTag9, SchemeLayout,
+       SchemeTitle, SchemeTitleFloat,
+       SchemeTitle1, SchemeTitle2, SchemeTitle3,
+       SchemeTitle4, SchemeTitle5, SchemeTitle6 }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayOrientationHorz,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
@@ -166,6 +172,8 @@ struct Monitor {
 	Monitor *next;
 	Window barwin;
 	const Layout *lt[2];
+  unsigned int colorfultitle;
+  unsigned int colorfultag;
 	Pertag *pertag;
 };
 
@@ -305,6 +313,8 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
+static void togglecolorfultitle();
+static void togglecolorfultag();
 static void load_xresources(void);
 static void resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst);
 
@@ -850,6 +860,8 @@ createmon(void)
 	m->nmaster = nmaster;
 	m->showbar = showbar;
 	m->topbar = topbar;
+  m->colorfultag = colorfultag ? colorfultag : 0;
+  m->colorfultitle = colorfultitle ? colorfultitle : 0;
 	m->gappih = gappih;
 	m->gappiv = gappiv;
 	m->gappoh = gappoh;
@@ -1070,17 +1082,27 @@ drawbar(Monitor *m)
 		if(!(occ & 1 << i || m->tagset[m->seltags] & 1 << i))
 			continue;
 		w = TEXTW(tags[i]);
-		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
+    drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? (m->colorfultag ? tagschemes[i] : SchemeSel) : SchemeTag]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
-	drw_setscheme(drw, scheme[SchemeNorm]);
+  drw_setscheme(drw, scheme[SchemeLayout]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - tw - stw - x) > bh) {
 		if (m->sel) {
-			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
+      if (selmon->colorfultitle) {
+          for (i = 0; i < LENGTH(tags); i++)
+              if (selmon->sel->tags & 1 << i)
+                  drw_setscheme(drw, scheme[titleschemes[i]]);
+              } else {
+                  int s = (m == selmon) && m->sel->isfloating
+                                  ? SchemeTitleFloat
+                                  : SchemeTitle;
+                  drw_setscheme(drw, scheme[s]);
+              }
+
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
@@ -2265,6 +2287,20 @@ togglescratch(const Arg *arg)
 		}
 	} else
 		spawn(arg);
+}
+
+void
+togglecolorfultitle()
+{
+        selmon->colorfultitle = !selmon->colorfultitle;
+        drawbar(selmon);
+}
+
+void
+togglecolorfultag()
+{
+        selmon->colorfultag = !selmon->colorfultag;
+        drawbar(selmon);
 }
 
 void
