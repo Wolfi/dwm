@@ -20,7 +20,7 @@
 * https://dwm.suckless.org/patches/actualfullscreen/
 * https://dwm.suckless.org/patches/alwayscenter/
 * https://dwm.suckless.org/patches/barpadding/
-* notitle
+* https://dwm.suckless.org/patches/notitle/
 * Describe patches
 * Remove
   * hide vacant tags
