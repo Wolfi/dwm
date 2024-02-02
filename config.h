@@ -18,8 +18,8 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const unsigned int colorfultitle  = 1;  /* 0 means title use SchemeTitle and SchemeTitleFloat */
 static const unsigned int colorfultag    = 1;  /* 0 means use SchemeSel for selected tag */
-static char font[]            = "monospace:size=10";
-static char dmenufont[]       = "monospace:size=10";
+static char font[]                  = "FantasqueSansM Nerd Font Mono:size=12";
+static char dmenufont[]             = "FantasqueSansM Nerd Font Mono:size=12";
 static const char *fonts[]          = { font };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -31,9 +31,9 @@ static char selbgcolor[]            = "#005577";
 #include "colors/rose-pine.h"
 static const char *colors[][3]  = {
   /*                     fg   bg   border */
-  [SchemeNorm]       = { fg1, bg0, fg2 },
+  [SchemeNorm]       = { fg2, bg0, fg2 },
   [SchemeSel]        = { bg1, rose, rose },
-  [SchemeTag]        = { fg1, bg1, bg0 },
+  [SchemeTag]        = { fg2, bg1, bg0 },
   [SchemeTag1]       = { rose, bg0,  bg1 },
   [SchemeTag2]       = { red, bg0, bg1 },
   [SchemeTag3]       = { yellow, bg0, bg1 },
