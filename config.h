@@ -31,7 +31,7 @@ static char selbgcolor[]            = "#005577";
 #include "colors/rose-pine.h"
 static const char *colors[][3]  = {
   /*                     fg   bg   border */
-  [SchemeNorm]       = { fg2, bg0, fg2 },
+  [SchemeNorm]       = { fg2, bg0, bg0 },
   [SchemeSel]        = { bg1, rose, rose },
   [SchemeTag]        = { fg2, bg1, bg0 },
   [SchemeTag1]       = { rose, bg0,  bg1 },
