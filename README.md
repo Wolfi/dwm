@@ -17,6 +17,18 @@
 * https://dwm.suckless.org/patches/notitle/
 * https://dwm.suckless.org/patches/actualfullscreen/
 
+## Manual
+
+### Exclude systray icons in picom
+
+In The function `clientmessage` in `dwm.c`, right before the `XReparentWindow` line, add:
+```
+XClassHint ch = {"dwmsystray", "dwmsystray"};
+XSetClassHint(dpy, c->win, &ch);
+```
+
+Afterwards we can exlude things in picom.conf using `"class_g = 'dwmsystray'",`
+
 ## TODO
 
 * https://dwm.suckless.org/patches/alwayscenter/
