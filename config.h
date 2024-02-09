@@ -28,49 +28,49 @@ static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 
-// #include "colors/rose-pine.h"
-// static const char *colors[][3]  = {
-//   /*                     fg   bg   border */
-//   [SchemeNorm]       = { fg2, bg0, bg0 },
-//   [SchemeSel]        = { bg1, rose, rose },
-//   [SchemeTag]        = { fg2, bg1, bg0 },
-//   [SchemeTag1]       = { rose, bg0,  bg1 },
-//   [SchemeTag2]       = { red, bg0, bg1 },
-//   [SchemeTag3]       = { yellow, bg0, bg1 },
-//   [SchemeTag4]       = { bluu, bg0, bg1 },
-//   [SchemeTag5]       = { purple, bg0, bg1 },
-//   [SchemeTag6]       = { cyan, bg0, bg1 },
-//   [SchemeLayout]     = { rose, bg0, bg1 },
-//   [SchemeTitle]      = { fg0, bg0, bg1 },
-//   [SchemeTitle1]     = { rose, bg0, bg1 },
-//   [SchemeTitle2]     = { red, bg0, bg1 },
-//   [SchemeTitle3]     = { yellow, bg0, bg1 },
-//   [SchemeTitle4]     = { bluu, bg0, bg1 },
-//   [SchemeTitle5]     = { purple, bg0, bg1 },
-//   [SchemeTitle6]     = { cyan, bg0, bg1 },
-// };
-
-#include "colors/gruvbox.h"
+#include "colors/rose-pine.h"
 static const char *colors[][3]  = {
   /*                     fg   bg   border */
   [SchemeNorm]       = { fg2, bg0, bg0 },
-  [SchemeSel]        = { bg1, fg2, fg2 },
+  [SchemeSel]        = { bg1, rose, rose },
   [SchemeTag]        = { fg2, bg1, bg0 },
-  [SchemeTag1]       = { orange, bg0,  bg1 },
-  [SchemeTag2]       = { yellow, bg0, bg1 },
-  [SchemeTag3]       = { green, bg0, bg1 },
+  [SchemeTag1]       = { rose, bg0,  bg1 },
+  [SchemeTag2]       = { red, bg0, bg1 },
+  [SchemeTag3]       = { yellow, bg0, bg1 },
   [SchemeTag4]       = { bluu, bg0, bg1 },
   [SchemeTag5]       = { purple, bg0, bg1 },
-  [SchemeTag6]       = { aqua, bg0, bg1 },
-  [SchemeLayout]     = { fg0, bg0, bg1 },
+  [SchemeTag6]       = { cyan, bg0, bg1 },
+  [SchemeLayout]     = { rose, bg0, bg1 },
   [SchemeTitle]      = { fg0, bg0, bg1 },
-  [SchemeTitle1]     = { orange, bg0,  bg1 },
-  [SchemeTitle2]     = { yellow, bg0, bg1 },
-  [SchemeTitle3]     = { green, bg0, bg1 },
+  [SchemeTitle1]     = { rose, bg0, bg1 },
+  [SchemeTitle2]     = { red, bg0, bg1 },
+  [SchemeTitle3]     = { yellow, bg0, bg1 },
   [SchemeTitle4]     = { bluu, bg0, bg1 },
   [SchemeTitle5]     = { purple, bg0, bg1 },
-  [SchemeTitle6]     = { aqua, bg0, bg1 },
+  [SchemeTitle6]     = { cyan, bg0, bg1 },
 };
+
+// #include "colors/gruvbox.h"
+// static const char *colors[][3]  = {
+//   /*                     fg   bg   border */
+//   [SchemeNorm]       = { fg2, bg0, bg0 },
+//   [SchemeSel]        = { bg1, fg2, fg2 },
+//   [SchemeTag]        = { fg2, bg1, bg0 },
+//   [SchemeTag1]       = { orange, bg0,  bg1 },
+//   [SchemeTag2]       = { yellow, bg0, bg1 },
+//   [SchemeTag3]       = { green, bg0, bg1 },
+//   [SchemeTag4]       = { bluu, bg0, bg1 },
+//   [SchemeTag5]       = { purple, bg0, bg1 },
+//   [SchemeTag6]       = { aqua, bg0, bg1 },
+//   [SchemeLayout]     = { fg0, bg0, bg1 },
+//   [SchemeTitle]      = { fg0, bg0, bg1 },
+//   [SchemeTitle1]     = { orange, bg0,  bg1 },
+//   [SchemeTitle2]     = { yellow, bg0, bg1 },
+//   [SchemeTitle3]     = { green, bg0, bg1 },
+//   [SchemeTitle4]     = { bluu, bg0, bg1 },
+//   [SchemeTitle5]     = { purple, bg0, bg1 },
+//   [SchemeTitle6]     = { aqua, bg0, bg1 },
+// };
 
 static const int tagschemes[] = { SchemeTag1, SchemeTag2, SchemeTag3,
                                   SchemeTag4, SchemeTag5, SchemeTag6 };
