@@ -29,7 +29,7 @@ static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
 
 #include "colors/rose-pine.h"
-static const char *colors[][3]  = {
+static char *colors[][3]  = {
   /*                     fg   bg   border */
   [SchemeNorm]       = { fg2, bg0, bg0 },
   [SchemeSel]        = { bg1, rose, rose },
@@ -51,7 +51,7 @@ static const char *colors[][3]  = {
 };
 
 // #include "colors/gruvbox.h"
-// static const char *colors[][3]  = {
+// static char *colors[][3]  = {
 //   /*                     fg   bg   border */
 //   [SchemeNorm]       = { fg2, bg0, bg0 },
 //   [SchemeSel]        = { bg1, fg2, fg2 },
@@ -148,7 +148,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun", "&", ">>", "/tmp/rofi.log" };
-static const char *rofitmuxcmd[] = { "tmux-project-switcher-rofi", "&", ">>", "/tmp/rofi.log"};
+// static const char *rofitmuxcmd[] = { "tmux-project-switcher-rofi", "&", ">>", "/tmp/rofi.log"};
 
 /*
  * Xresources preferences to load at startup
