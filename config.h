@@ -76,7 +76,7 @@ static char selbgcolor[]            = "#005577";
 static char *colors[][3]  = {
   /*                     fg   bg   border */
   [SchemeNorm]       = { fg2, bg0, bg0 },
-  [SchemeSel]        = { bg1, fg2, fg2 },
+  [SchemeSel]        = { bg1, fg2, bg1 },
   [SchemeTag]        = { fg2, bg0, bg1 },
   [SchemeTag1]       = { orange, bg1,  bg1 },
   [SchemeTag2]       = { yellow, bg1, bg1 },
