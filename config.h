@@ -175,7 +175,7 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "&", ">>", "/tmp/rofi.
 
 static const char screenshotscript[] = "/home/steven/.local/scripts/screenshot.sh";
 static const char *screenshotcmdwindow[] = { screenshotscript, "window" };
-// static const char *screenshotcmdselect[] = {screenshotscript, "select"};
+static const char *screenshotcmdselect[] = {screenshotscript, "flameshot"};
 
 /*
  * Xresources preferences to load at startup
@@ -205,8 +205,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_p,      spawn,          SHCMD("tmux-project-switcher-rofi & >> /tmp/rofi.log") },
 	{ MODKEY,                       XK_l,      spawn,          SHCMD("lock >> /tmp/lock.log") },
-	// { MODKEY,                       XK_Print,  spawn,          SHCMD("screenshot.sh >> /tmp/screenshot.log") },
 	{ MODKEY,                       XK_Print,  spawn,          {.v = screenshotcmdwindow } },
+	{ MODKEY|ShiftMask,             XK_Print,  spawn,          {.v = screenshotcmdselect } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_s,  togglescratch,      {.v = scratchpadcmd } },
