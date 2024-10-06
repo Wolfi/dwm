@@ -35,9 +35,12 @@ Afterwards we can exlude things in picom.conf using `"class_g = 'dwmsystray'",`
 * https://dwm.suckless.org/patches/barpadding/
 * Describe patches
 * https://dwm.suckless.org/patches/sticky/
+* max width see this https://dwm.suckless.org/patches/center_first_window/dwm-centerfirstwindow-6.2.diff or this https://dwm.suckless.org/patches/centeredmaster/dwm-centeredmaster-6.1.diff or https://dwm.suckless.org/patches/freespace/
 
 ## To Check
 
+* https://dwm.suckless.org/patches/autostart/
+* https://dwm.suckless.org/patches/sticky/
 * alwayscenter
 * barpadding
 * colorfull tag
