@@ -34,9 +34,7 @@ Afterwards we can exlude things in picom.conf using `"class_g = 'dwmsystray'",`
 * https://dwm.suckless.org/patches/alwayscenter/
 * https://dwm.suckless.org/patches/barpadding/
 * Describe patches
-* Remove
-  * hide vacant tags
-  * xresources
+* https://dwm.suckless.org/patches/sticky/
 
 ## To Check
 
